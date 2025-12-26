@@ -22,7 +22,8 @@ vector<string> split(const string &line, char delimeter) {
   string token;
   stringstream ss(line);
   while (getline(ss, token, delimeter)) {
-    tokens.push_back(token);
+    if (token.size() > 0)
+      tokens.push_back(token);
   }
   return tokens;
 }
